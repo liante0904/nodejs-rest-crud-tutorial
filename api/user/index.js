@@ -84,5 +84,6 @@ router.post('/', (req, res) => {
     return res.status(201).json(newUser);
 });
 
+router.put('/:id', controller.update);
 
 module.exports = router;
