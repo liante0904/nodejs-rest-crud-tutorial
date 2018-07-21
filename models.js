@@ -1,9 +1,8 @@
 const config = require('./config/environments');
 const Sequelize = require('sequelize');
-const sequelize = new Sequelize('config.mysql.database', 'config.mysql.username', 'config.mysql.password', {
-  host: 'local',
+const sequelize = new Sequelize(config.mysql.database, config.mysql.username, config.mysql.password, {
+  host: 'localhost',
   dialect: 'mysql',
-  operatorsAliases: false,
 
   pool: {
     max: 5,
@@ -12,19 +11,12 @@ const sequelize = new Sequelize('config.mysql.database', 'config.mysql.username'
     idle: 10000
   },
 
+  // SQLite only
+//  storage: 'path/to/database.sqlite',
+
+  // http://docs.sequelizejs.com/manual/tutorial/querying.html#operators
+  operatorsAliases: false
 });
-
-// const Sequelize = require('sequelize');
-// const sequelize = new Sequelize(
-//   'node_api_codelab', // 데이터베이스 이름
-//   'root', // 유저 명
-//   'root', // 비밀번호
-//   {
-//     'host': 'localhost', // 데이터베이스 호스트
-//     'dialect': 'mysql' // 사용할 데이터베이스 종류
-//   }
-// ); // database information
-
 
 const User = sequelize.define('user', {
     name: Sequelize.STRING
