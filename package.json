@@ -4,7 +4,7 @@
   "description": "nodejs-rest-crud",
   "main": "index.js",
   "scripts": {
-    "test": "node_modules/.bin/mocha api/user/user.spec.js",
+    "test": "NODE_ENV=test ./node_modules/.bin/mocha api/**/*.spec.js",
     "start": "node app.js"
   },
   "author": "",

@@ -8,17 +8,17 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 
 
-app.get('/', (req, res) => {
-   res.send('Hello World! \n'); 
-});
+// app.get('/', (req, res) => {
+//    res.send('Hello World! \n'); 
+// });
 
-app.listen(3000, () => {
-    console.log('Example app listening on port 3000!');
+// app.listen(3000, () => {
+//     console.log('Example app listening on port 3000!');
   
-    require('./models').sequelize.sync({force: true})
-        .then(() => {
-          console.log('Databases sync');
-        });
-  });
+//     require('./models').sequelize.sync({force: false})
+//         .then(() => {
+//           console.log('Databases sync');
+//         });
+//   });
 
 module.exports = app;

@@ -18,11 +18,11 @@ const sequelize = new Sequelize(config.mysql.database, config.mysql.username, co
   operatorsAliases: false
 });
 
-const User = sequelize.define('user', {
+const User = sequelize.define('users', {
     name: Sequelize.STRING
   });
 
 module.exports = {
-sequelize: sequelize,
-User: User
+  sequelize: sequelize,
+  User: User
 }
